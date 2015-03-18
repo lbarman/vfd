@@ -1,6 +1,11 @@
 @font-face {
     font-family: ds-digi;
-    src: url('../fonts/ds-digi.ttf')
+    src: url("../fonts/ds-digi.ttf");
+}
+
+
+* {
+    box-sizing: border-box;
 }
 
 html {
@@ -13,21 +18,72 @@ body {
 
 body {
     background-color: #e6e6e6;
+    -webkit-font-smoothing: antialiased !important;
+    background: url("../images/background.jpg") 50% 0 no-repeat;
+    background-size: 100% auto;
+    border: none;
+    opacity: 1;
+    color: #FFF;
+    min-height: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 1);
+}
+
+.well {
+    padding: 0px;
+    border: none;
+    background: #222222 url("../images/well-top-full.svg") 50% 0 no-repeat;
+    background-size:100%;
+}
+
+.highlight
+{
+    color:#fec600;
+}
+
+.well-highlight
+{
+    background-color:#fec600;
+    color: black !important;
+}
+
+.well-header
+{
+    height:24px;
+    margin:0px;
+    padding:0px;
+}
+
+.well-header .well-title
+{
+    padding-left:44px;
+    padding-top:2px;
+    text-shadow: inset 1px 1px 1px rgba(0, 0, 0, 1);
+    color:#CCC;
+    font-weight: bold;
+}
+
+.well-inner {
+    margin:0px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: none;
+    border-radius: 3px;
+    box-shadow:inset 2px 1px 8px rgba(0, 0, 0, 0.7)
 }
 
 .loader {
-	width: 100%;
-	font-size: 50px;
-	text-align: center;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
 }
 
 .table-instrument {
-	table-layout: fixed;
-	width: 100%;
+    table-layout: fixed;
+    width: 100%;
 }
 
 .table-instrument td {
-	width: 100%;
+    width: 100%;
 }
 
 .heartbeat {
@@ -52,4 +108,3 @@ body {
         transform: scale(1);
     }
 }
-

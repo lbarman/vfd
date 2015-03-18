@@ -22,6 +22,12 @@ import vfd.dashboard.ui.panels.Primary
 
 class Layout(socket: MavlinkSocket) {
 
+  def well(content: String) = 
+        div(`class` := "panel panel-default well")(
+          div(`class` := "well-header")(div(`class` := "well-title")("Title")),
+          div(`class` := "panel-body well-inner")(
+            content))
+
   val map = iframe(
     width := "100%",
     height := "350px",
@@ -36,14 +42,8 @@ class Layout(socket: MavlinkSocket) {
 
   def element(implicit env: Environment): HTMLElement = div(`class` := "container-fluid")(
     div(`class` := "row")(
-      div(`class` := "col-xs-12")(
-        div(`class` := "panel panel-default")(
-          div(`class` := "panel-body")()))),
-    div(`class` := "row")(
       div(`class` := "col-xs-4")(
-        div(`class` := "panel panel-default")(
-          div(`class` := "panel-body")(
-            map))),
+        well("test")),
       div(`class` := "col-xs-5")(
         div(`class` := "panel panel-default")(
           div(`class` := "panel-body")(

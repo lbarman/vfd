@@ -1,216 +1,110 @@
-html, body {
-	height: 100%;
+@font-face {
+    font-family: ds-digi;
+    src: url("../fonts/ds-digi.ttf");
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
 }
 
 body {
-	background-color: #e6e6e6;
+    height: 100%;
+}
+
+body {
+    background-color: #e6e6e6;
+    -webkit-font-smoothing: antialiased !important;
+    background: url("../images/background.jpg") 50% 0 no-repeat;
+    background-size: 100% auto;
+    border: none;
+    opacity: 1;
+    color: #FFF;
+    min-height: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 1);
+}
+
+.well {
+    padding: 0px;
+    border: none;
+    background: #222222 url("../images/well-top-full.svg") 50% 0 no-repeat;
+    background-size:100%;
+}
+
+.highlight
+{
+    color:#fec600;
+}
+
+.well-highlight
+{
+    background-color:#fec600;
+    color: black !important;
+}
+
+.well-header
+{
+    height:24px;
+    margin:0px;
+    padding:0px;
+}
+
+.well-header .well-title
+{
+    padding-left:44px;
+    padding-top:2px;
+    text-shadow: inset 1px 1px 1px rgba(0, 0, 0, 1);
+    color:#CCC;
+    font-weight: bold;
+}
+
+.well-inner {
+    margin:0px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: none;
+    border-radius: 3px;
+    box-shadow:inset 2px 1px 8px rgba(0, 0, 0, 0.7)
 }
 
 .loader {
-	width: 100%;
-	font-size: 50px;
-	text-align: center;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
 }
 
-#vfd-dashboard {
-	width: 100%;
-	height: 100%;
-}
-
-#vfd-dashboard header {
-	color: #eeeeee;
-	background-color: #222222;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-	display: flex;
-}
-
-#vfd-dashboard header > * {
-	margin: 5px;
-	flex: 1;
-}
-
-#vfd-dashboard header > :nth-child(1) {
-	text-align: left;
-}
-
-#vfd-dashboard header > :nth-child(2) {
-	text-align: center;
-}
-
-#vfd-dashboard header > :nth-child(3) {
-	text-align: right;
-}
-
-/* dashboard layout */
-.d-container {
-	display: flex;
-	align-content: flex-start;
-	align-items: stretch;
-}
-
-.d-container > * {
-	flex: 1;
-}
-
-.d-column {
-	flex-direction: column;
-	height: 100%;
-}
-
-.d-row {
-	flex-direction: row;
-	width: 100%;
-}
-
-.d-above {
-	flex: none;
-}
-
-.d-left {
-	flex: 1 1 30%;
-}
-
-.d-middle {
-	flex: 1 1 45%;
-}
-
-.d-right {
-	flex: 1 1 25%;
-}
-
-.d-center {
-	flex: none;
-}
-
-.d-below {
-	flex: 1;
-}
-
-.d-details {
-	display: none;
-}
-
-.d-detailed .d-left, .d-detailed .d-right {
-	display: none;
-}
-
-.d-detailed .d-middle {
-	flex: 1 1 25%;
-}
-
-.d-detailed .d-details {
-	display: flex;
-	flex: 1 1 75%;
-	overerflow-y: scroll;
-}
-
-.d-panel {
-	margin: 5px;
-	padding: 15px;
-	background-color: white;
-	border-radius: 3px;
-}
-
-
-/* Mode styles */
-.mode {
-	display: inline-block;
-	box-sizing: border-box;
-	text-decoration: normal;
-	margin-right: 5px;
-}
-
-.mode.danger {
-	color: #d9534f;
-	text-shadow: 0 0 5px #d9534f;
-	animation: danger-blink 1s linear infinite;
-	-webkit-animation: danger-blink 1s linear infinite;
-}
-
-.mode.warning {
-	color: #f0ad4e;
-	text-shadow: 0 0 5px #f0ad4e;
-}
-
-.mode.info {
-	color: #5bc0de;
-	text-shadow: 0 0 5px #5bc0de;
-}
-
-.mode.success {
-	color: #5cb85c;
-	text-shadow: 0 0 5px #5cb85c;
-}
-
-.mode.off {
-	color: #eeeeee;
-	text-shadow: none;
-	animation: none;
-	-webkit-animation: none;
-}
-
-/* TODO: Rules below are maybe obsolete and need to be reviewed */
 .table-instrument {
-	table-layout: fixed;
-	width: 100%;
+    table-layout: fixed;
+    width: 100%;
 }
 
 .table-instrument td {
-	width: 100%;
+    width: 100%;
 }
 
 .heartbeat {
-	color: rgba(165, 25, 25, 1);
-	animation: heartbeat 2s linear infinite;
+    color: rgba(165, 25, 25, 1);
+    animation: heartbeat 2s linear infinite;
 }
 
 @keyframes heartbeat {
-	0% {
-		transform: scale(1);
-	}
-	7% {
-		transform: scale(1.3);
-	}
-	14% {
-		transform: scale(1);
-	}
-	21% {
-		transform: scale(1.3);
-	}
-	28% {
-		transform: scale(1);
-	}
-}
-
-@keyframes danger-blink {
-	0% {
-		color: #eeeeee;
-		text-shadow: none;
-	}
-	50% {
-		color: #d9534f;
-		text-shadow: 0 0 5px #d9534f;
-	}
-	100% {
-		color: #eeeeee;
-		text-shadow: none;
-	}
-}
-@-webkit-keyframes danger-blink {
-	0% {
-		color: #eeeeee;
-		text-shadow: none;
-	}
-	50% {
-		color: #d9534f;
-		text-shadow: 0 0 5px #d9534f;
-	}
-	100% {
-		color: #eeeeee;
-		text-shadow: none;
-	}
+    0% {
+        transform: scale(1);
+    }
+    7% {
+        transform: scale(1.3);
+    }
+    14% {
+        transform: scale(1);
+    }
+    21% {
+        transform: scale(1.3);
+    }
+    28% {
+        transform: scale(1);
+    }
 }

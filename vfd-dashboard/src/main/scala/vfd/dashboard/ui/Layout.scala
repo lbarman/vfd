@@ -15,18 +15,16 @@ import scalatags.JsDom.all.stringFrag
 import scalatags.JsDom.all.stringStyle
 import scalatags.JsDom.all.style
 import scalatags.JsDom.all.width
+import scalatags.JsDom.all.Tag
 import vfd.dashboard.Environment
 import vfd.dashboard.MavlinkSocket
 import vfd.dashboard.ui.panels.Communication
 import vfd.dashboard.ui.panels.Primary
+import vfd.dashboard.ui.panels.Well
 
 class Layout(socket: MavlinkSocket) {
-
-  def well(content: String) = 
-        div(`class` := "panel panel-default well")(
-          div(`class` := "well-header")(div(`class` := "well-title")("Title")),
-          div(`class` := "panel-body well-inner")(
-            content))
+  
+  
 
   val map = iframe(
     width := "100%",
@@ -43,7 +41,7 @@ class Layout(socket: MavlinkSocket) {
   def element(implicit env: Environment): HTMLElement = div(`class` := "container-fluid")(
     div(`class` := "row")(
       div(`class` := "col-xs-4")(
-        well("test")),
+        new Well("this is a test", p("test"), socket).render),
       div(`class` := "col-xs-5")(
         div(`class` := "panel panel-default")(
           div(`class` := "panel-body")(

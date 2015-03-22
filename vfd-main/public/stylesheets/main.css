@@ -41,6 +41,12 @@ body {
     color:#fec600;
 }
 
+.well-critical
+{
+    background-color:#fec600;
+    color: black !important;
+}
+
 .well-highlight
 {
     background-color:#fec600;
